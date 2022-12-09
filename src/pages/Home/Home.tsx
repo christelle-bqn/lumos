@@ -1,5 +1,4 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { theme } from "../../styles/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Home.css";
@@ -7,7 +6,6 @@ import { Circle } from "../../components/Circle";
 import { data } from "../Main/MainData";
 import { Infos } from "../../components/Infos";
 import { HomeContext, homeContext } from "./context";
-import Sound from "react-sound";
 import { SoundOnSvg } from "../../components/Svg/SoundOnSvg";
 import { SoundOffSvg } from "../../components/Svg/SoundOffSvg";
 import { LightningSvg } from "../../components/Svg/LightningSvg";
@@ -106,7 +104,7 @@ export const Home: FC = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [showMain, soundMute]);
+  }, [showMain, soundMute, playForest]);
 
   const handleSound = () => {
     if (audioRef.current)
@@ -179,7 +177,7 @@ export const Home: FC = () => {
                 }, 800)
               }
             >
-              ENTRER
+              COMMENCER
             </motion.button>
           </motion.div>
         )}
@@ -294,6 +292,7 @@ export const Home: FC = () => {
                   animate={showGraph ? "visible" : "hidden"}
                 >
                   <img
+                    alt="Evolution des sorts dans la saga"
                     style={{
                       height: 250,
                       zIndex: 1,

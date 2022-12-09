@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
-import { homeContext, useHomeContext } from "../pages/Home/context";
+import { FC, useState } from "react";
+import { useHomeContext } from "../pages/Home/context";
 import { Data } from "../pages/Main/MainData";
 import { theme } from "../styles/theme";
 import { Circle } from "./Circle";
@@ -83,6 +83,7 @@ export const Infos: FC<InfosProps> = ({ data }) => {
             <p style={styles.subtitle}>Qui a utilisé le plus de sorts :</p>
             <p style={styles.text}>{data.characterMostSpells}</p>
             <img
+              alt="Ecusson maison"
               src={require(`../assets/images/${data.houseMostSpells}.png`)}
               height={51}
               width={43}
@@ -90,6 +91,7 @@ export const Infos: FC<InfosProps> = ({ data }) => {
           </div>
 
           <img
+            alt="Affiche film"
             height={131}
             width={96}
             src={require(`../assets/images/${data.image}`)}

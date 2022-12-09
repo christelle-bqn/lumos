@@ -78,7 +78,14 @@ export const Circle: FC<CircleProps> = ({ handleData, showData, color }) => {
     }
 
     //circleRef.current?.getAttribute()
-  }, [circlePosX, circleRef, homeContext.mousePos.x]);
+  }, [
+    circlePosY,
+    circlePosX,
+    circleRef,
+    homeContext.mousePos.x,
+    homeContext.mousePos.y,
+    showData,
+  ]);
 
   useEffect(() => {
     window.addEventListener("resize", getPosition);
