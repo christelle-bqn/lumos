@@ -76,8 +76,6 @@ export const Circle: FC<CircleProps> = ({ handleData, showData, color }) => {
     } else {
       setOpacity(0);
     }
-
-    //circleRef.current?.getAttribute()
   }, [
     circlePosY,
     circlePosX,
